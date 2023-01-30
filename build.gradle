@@ -148,7 +148,13 @@ repositories {
         url = "https://maven.impactdev.net/repository/development/"
     }
 }
-
+//Enable § instead of long Characters
+tasks.withType(JavaCompile)
+        {
+            task ->
+                task.options.encoding = 'UTF-8'
+                task.options.fork = true
+        }
 dependencies {
     // Specify the version of Minecraft to use. If this is any group other than 'net.minecraft' it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency, and its patches will be applied.
